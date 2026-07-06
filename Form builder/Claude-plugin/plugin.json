@@ -1,12 +1,11 @@
 {
   "name": "form-builder-plugin",
   "version": "0.1.0",
-  "description": "Recreate a QuarksUp / Komeo career assessment form (formulaire d'entretien carrière) from a JSON export via the Chrome extension, then verify it and return the link.",
+  "description": "Recreate a QuarksUp career assessment form (formulaire d'entretien carrière) from a JSON export via the Chrome extension, then verify it and return the link.",
   "author": {
     "name": "Sobia"
   },
   "keywords": [
-    "komeo",
     "quarksup",
     "assessment-form",
     "entretien-carriere",

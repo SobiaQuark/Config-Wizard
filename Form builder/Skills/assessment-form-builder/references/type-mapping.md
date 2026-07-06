@@ -1,4 +1,4 @@
-# Type mappings (Komeo AssessmentForm)
+# Type mappings (QuarksUp AssessmentForm)
 
 All values are the exact `<option value="...">` strings in the app's `<select>`
 elements. Set them with `select.value = '...'`.

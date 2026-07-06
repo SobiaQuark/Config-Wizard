@@ -5,7 +5,7 @@ A collection of Claude plugins and skills for QuarksUp / Komeo HR workflows.
 ## Contents
 
 ### Form Builder
-Recreates a QuarksUp / Komeo career assessment form (*formulaire d'entretien carrière*) from a JSON export via the Chrome extension, then verifies it and returns the link.
+Recreates a QuarksUp career assessment form (*formulaire d'entretien carrière*) from a JSON export via the Chrome extension, then verifies it and returns the link.
 
 **Structure:**
 ```

@@ -1,16 +1,16 @@
 ---
 name: assessment-form-builder
 description: >-
-  Recreate a QuarksUp / Komeo career "Assessment Form" (Formulaire d'entretien
-  carrière) inside the Komeo web app from a JSON export, using the Claude-in-Chrome
+  Recreate a QuarksUp career "Assessment Form" (Formulaire d'entretien
+  carrière) inside a QuarksUp web app instance from a JSON export, using the Claude-in-Chrome
   extension. Takes two inputs: the form's JSON export (an AssessmentForm object,
   usually a file named like AssessmentForm_REF_date.json) and the desired form
   title (Libellé). Use this skill whenever the user wants to create, rebuild,
   replicate, duplicate-from-export, or import an assessment/career form, a
   "formulaire d'entretien", a competency form, or an "entretien carrière" into
-  Komeo/QuarksUp from a JSON — even if they just say "crée ce formulaire",
-  "recrée ce formulaire", "monte ce formulaire dans Komeo", or paste a form JSON
-  and a title. Also trigger when they mention komeo.qupdev.net or a QuarksUp
+  QuarksUp from a JSON — even if they just say "crée ce formulaire",
+  "recrée ce formulaire", "monte ce formulaire", or paste a form JSON
+  and a title. Also trigger when they mention a QuarksUp instance URL or a QuarksUp
   AssessmentForm and want it built via the Chrome extension. It drives the legacy
   WebForms UI efficiently through JavaScript rather than pixel-clicking, and ends
   with a verification pass and the link to the created form.
@@ -20,7 +20,7 @@ description: >-
 
 ## What this does and why it works this way
 
-Komeo/QuarksUp is a **legacy ASP.NET WebForms** app: actions run through
+QuarksUp is a **legacy ASP.NET WebForms** app: actions run through
 `__doPostBack` with ViewState, editors open as **popups/iframes**, and there is
 **no REST API or JSON import**. Pixel-clicking is slow and brittle. The reliable,
 fast path is to **drive the page with JavaScript** through the Chrome extension:
@@ -31,8 +31,7 @@ checkpoints, not for every action.
 
 ## Inputs (ask for all three up front, before doing anything)
 
-1. **Base URL** — which Komeo instance to build the form on (e.g.
-   `https://komeo.qupdev.net` for dev, or the production domain). **Always ask the
+1. **Base URL** — which QuarksUp instance to build the form on (e.g. the dev or production domain). **Always ask the
    user for this at the very start** unless they already stated it in the
    conversation. Do not assume dev. Everything below is relative to this URL.
 2. **JSON export** of the source form — an `AssessmentForm` object (top-level keys
@@ -47,7 +46,7 @@ avoids building on the wrong instance.
 ## Prerequisites (check first, don't assume)
 
 - The Chrome extension is connected (`list_connected_browsers`).
-- The user is **logged in** to the Komeo instance. Navigate to the target and
+- The user is **logged in** to the QuarksUp instance. Navigate to the target and
   screenshot. If you land on the ADFS/quarksUp login page, **stop and ask the user
   to log in themselves** — never type passwords (see security rules). Resume once
   they confirm.
